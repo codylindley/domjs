@@ -2,11 +2,11 @@
 * http://http://domenlightenment.com/#12
 * Copyright (c) 2012 Cody Lindley; Licensed MIT */
 
-(function(){
+(function(win){
 
 'use strict';
 
-var global = this;
+var global = win;
 var doc = global.document;
 
 var dom = function(params,context){
@@ -81,8 +81,17 @@ return this; //return e.g. {0:ELEMENT_NODE,1:ELEMENT_NODE,length:2}
 //expose dom to global scope
 global.dom = dom;
 
-//short cut to prototype
+//global short cut to prototype
 dom.fn = GetOrMakeDom.prototype;
 
 
-})();
+})(window);
+
+
+dom.fn.each = function (callback) {
+	var len = this.length;
+	for(var i = 0; i < len; i++){
+		callback.call(this[i], i, this[i]);
+	}
+	return this;
+};

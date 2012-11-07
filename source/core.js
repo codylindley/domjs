@@ -1,5 +1,8 @@
+(function(win){
 
-var global = this;
+'use strict';
+
+var global = win;
 var doc = global.document;
 
 var dom = function(params,context){
@@ -9,7 +12,6 @@ var dom = function(params,context){
 var regXContainsTag = /^\s*<(\w+|!)[^>]*>/;
 
 var GetOrMakeDom = function(params,context){
-
 	var currentContext = doc;
 	if(context){
 		if(context.nodeType){
@@ -76,3 +78,6 @@ global.dom = dom;
 
 //global short cut to prototype
 dom.fn = GetOrMakeDom.prototype;
+
+
+})(window);
