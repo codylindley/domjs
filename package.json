@@ -1,0 +1,23 @@
+{
+    "name": "dom",
+    "title": "dom",
+    "description": "dom",
+    "version": "0.1",
+    "homepage": "http://http://domenlightenment.com/#12",
+    "author": {
+        "name": "Cody Lindley",
+        "url": "http://codylindley.com"
+    },
+    "repository": {
+    	"type": "git",
+		"url": ""
+    	},
+    "bugs": {"url": ""},
+    "licenses": [
+        {
+			"type": "MIT",
+			"url": "http://opensource.org/licenses/mit-license.php"
+		}
+    ],
+    "keywords": []
+}
