@@ -9,10 +9,8 @@ var dom = function(params,context){
 	return new GetOrMakeDom(params,context);
 };
 
-var regXContainsTag = /^\s*<(\w+|!)[^>]*>/;
-
 var GetOrMakeDom = function(params,context){
-	
+
 	var currentContext = doc;
 	if(context){
 		if(context.nodeType){
@@ -29,7 +27,7 @@ var GetOrMakeDom = function(params,context){
 	}
 
 	//if HTML string, construct domfragment, fill object, then return object
-	if(typeof params === 'string' && regXContainsTag.test(params)){//yup its forsure html string
+	if(typeof params === 'string' && /^\s*<(\w+|!)[^>]*>/.test(params)){//yup its forsure html string
 		//create div & docfrag, append div to docfrag, then set its div's innerHTML to the string, then get first child
 		var divElm = currentContext.createElement('div');
 		divElm.className = 'hippo-doc-frag-wrapper';
