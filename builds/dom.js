@@ -82,7 +82,6 @@ global.dom = dom;
 //global short cut to prototype
 dom.fn = GetOrMakeDom.prototype;
 
-
 })(window);
 
 
@@ -236,7 +235,7 @@ dom.fn.wrapInner = function(string){
 
 };
 
- dom.fn.html = function(htmlStringOrTextString){
+dom.fn.html = function(htmlStringOrTextString){
 	if(htmlStringOrTextString){
 		return this.each(function(){
 			this.innerHTML = htmlStringOrTextString;
@@ -246,7 +245,7 @@ dom.fn.wrapInner = function(string){
 	}
 };
 
- dom.fn.outerHtml = function(htmlStringOrTextString){
+dom.fn.outerHtml = function(htmlStringOrTextString){
 	if(htmlStringOrTextString){
 		return this.each(function(){
 			this.outerHTML = htmlStringOrTextString;

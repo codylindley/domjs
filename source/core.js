@@ -78,5 +78,4 @@ global.dom = dom;
 //global short cut to prototype
 dom.fn = GetOrMakeDom.prototype;
 
-
 })(window);
