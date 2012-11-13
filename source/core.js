@@ -13,9 +13,9 @@ var GetOrMakeDom = function(params,context){
 
 	var currentContext = doc;
 	if(context){
-		if(context.nodeType){
+		if(context.nodeType){//its either a document node or element node
 			currentContext = context;
-		}else{
+		}else{//else its a string selector, use it to selector a node
 			currentContext = doc.querySelector(context);
 		}
 	}
@@ -30,7 +30,7 @@ var GetOrMakeDom = function(params,context){
 	if(typeof params === 'string' && /^\s*<(\w+|!)[^>]*>/.test(params)){//yup its forsure html string
 		//create div & docfrag, append div to docfrag, then set its div's innerHTML to the string, then get first child
 		var divElm = currentContext.createElement('div');
-		divElm.className = 'hippo-doc-frag-wrapper';
+		divElm.className = 'doc-frag-wrapper';
 		var docFrag = currentContext.createDocumentFragment();
 		docFrag.appendChild(divElm);
 		var queryDiv = docFrag.querySelector('div');

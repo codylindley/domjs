@@ -19,3 +19,13 @@ test('invoke dom()',function(){
 	equal(dom(document.body.children).length  > 0,true);
 	equal(dom(dom('body')).length  > 0,true);
 });
+
+test('dom.html()',function(){
+	equal(typeof dom('#qunit-fixture').html('<p>hi</p>'),'object');
+	equal(dom('#qunit-fixture').html(),'<p>hi</p>');
+});
+
+test('dom.text()',function(){
+	equal(typeof dom('#qunit-fixture li:first-child').text('blue'),'object');
+	equal(dom('#qunit-fixture li').text(''),'blue');
+});
