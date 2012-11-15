@@ -1,10 +1,8 @@
-/*dom - v0.1.0 - 2012-11-13
+/*dom - v0.1.0 - 2012-11-15
 * http://http://domenlightenment.com/#12
 * Copyright (c) 2012 Cody Lindley; Licensed MIT */
 
 (function(win){
-
-'use strict';
 
 var global = win;
 var doc = global.document;
@@ -111,5 +109,18 @@ dom.fn.text = function(textString){
 	}else{
 		return this[0].textContent.trim();
 	}
+};
+
+dom.fn.append = function(stringOrObject){
+	return this.each(function(){
+		if(typeof stringOrObject === 'string'){
+			this.insertAdjacentHTML('beforeend',stringOrObject);
+		}else{
+			var that = this;
+			dom(stringOrObject).each(function(name,value){
+				that.insertAdjacentHTML('beforeend',value.outerHTML);
+			});
+		}
+	});
 };
 

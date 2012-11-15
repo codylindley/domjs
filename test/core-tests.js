@@ -8,8 +8,8 @@ test('invoke dom() with no parameter',function(){
 test('invoke dom()',function(){
 	equal(typeof dom('body'),'object');
 	equal(typeof dom('<p>Hellow</p><p> World!</p>'),'object');
-	equal(typeof dom('document.body'),'object');
-	equal(typeof dom('[body]'),'object');
+	equal(typeof dom(document.body),'object');
+	equal(typeof dom([document.body]),'object');
 	equal(typeof dom('document.body.children'),'object');
 	equal(typeof dom(dom('body')),'object');
 	equal(dom('body').length > 0,true);
@@ -28,4 +28,12 @@ test('dom.html()',function(){
 test('dom.text()',function(){
 	equal(typeof dom('#qunit-fixture li:first-child').text('blue'),'object');
 	equal(dom('#qunit-fixture li').text(''),'blue');
+});
+
+test('dom.append()',function(){
+	dom('#qunit-fixture ul').append('<li>4</li>');
+	equal(dom('#qunit-fixture li').length,4);
+
+	dom('#qunit-fixture ul').append(document.createElement('li'));
+	equal(dom('#qunit-fixture li').length,5);
 });

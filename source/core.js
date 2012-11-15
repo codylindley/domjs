@@ -1,7 +1,5 @@
 (function(win){
 
-'use strict';
-
 var global = win;
 var doc = global.document;
 
