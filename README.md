@@ -1,4 +1,4 @@
 ###dom.js
 
-From [www.domenlighenment.com](http://domenlightenment.com/) chapter 12
+From [www.domenlighenment.com](http://domenlightenment.com/#12) chapter 12
 
